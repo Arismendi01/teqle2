@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+}
+
+.body {
+    background: url(./img/2.jpg);
+    width: 100%;
+    height: 100vh;
+    background-position: bottom center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*Este es el menu*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 20px 50px;
+}
+
+header .logo {
+    position: relative;
+
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+}
+
+header .logo {
+    width: 200px;
+}
+
+/*Esta da forma al menu en linea*/
+header ul li a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.6;
+}
+
+/*Esta le da efecto al menu sin stiky*/
+a {
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    color: #262626;
+    transition: .5s;
+    z-index: 1;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-top: 2px solid #262626;
+        border-bottom: 2px solid #262626;
+        transform: scaleY(2);
+        opacity: 0;
+        transition: .3s;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 1px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #262626;
+        transform: scale(0);
+        opacity: 0;
+        transition: .3s;
+        z-index: -1;
+    }
+
+    &:hover {
+        color: #fff;
+
+        &:before {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+
+        &:after {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+    }
+}
+
+/*esto es para dar funcionalidad en JS*/
+header.sticky {
+    padding: 20px 50px;
+    /* background-color: #fff; Esta linea esta en caso de que se quiera sacar el degrades*/
+    background-color: rgba(0, 0, 0, 0.63);
+    /*Esta es la transparencia del banner*/
+}
+
+/*Este es el banner del menú*/
+header.sticky ul li a {
+    color: #ffffff;
+}
+
+header.sticky ul {
+    padding: 15px;
+}
+
+/*Esto le da el color a las letras al hacer hover*/
+header.sticky ul li a:hover {
+    color: #ffa502;
+    text-shadow: 0 0 15px #d35400;
+}
+
+/*esto es para quitarle los cuadros al sticky*/
+header.sticky a {
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    color: none;
+    transition: .5s;
+    z-index: 1;
+
+    &:after {
+        content: none;
+    }
+}
+
+/*Este es el menu pero el logo esto es si el logo es en texto*/
+/*header .brand {
+    position: relative;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+    z-index: 100000;
+}
+*/
+
+/*Estas son las secciones*/
+.sec1 {
+    background: url(./img/1.jpg);
+    background-position: bottom center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.sec2 {
+    background: url(./img/2.jpg);
+    background-position: bottom center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.sec3 {
+    background: url(./img/3.jpeg);
+    background-position: bottom center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.sec4 {
+    background: url(./img/4.jpg);
+    background-position: bottom center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*Este le da tamaño y forma a las imagenes de las secciones*/
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+/*Esta es la sección donde estan los parrafos, y dentro de la misma la p, aca le doy tamaño y color a ese espacio*/
+.contain {
+    width: 100%;
+    height: 250px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+}
+
+/*Esta es la sección donde estan las  P, y dentro de la misma la p, aca le doy tamaño*/
+
+.contain p {
+    font-size: 2.5rem;
+    font-family: "lato";
+    line-height: 250px;
+}
+
+/*Seccion banner letras con movimiento*/
+/*esto opaca las letras
+.hidden {
+    opacity: 0;
+}
+*/
+
+/* esto me esta afectando el menu con las rallas debo correguir para modificar el efecto de las letras que se mueven 
+.console-container {
+    font-size: 200px;
+    text-align: center;
+    height: 450px;
+    width: 900px;
+    display: inline-block;
+    position: relative;
+    color: white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.console-container {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 58px;
+    font-weight: 700;
+
+}
+
+.console-underscore {
+    display: inline-block;
+    position: relative;
+    top: -0.14em;
+    left: 10px;
+}
+*/

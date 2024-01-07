@@ -154,6 +154,44 @@ header.sticky a {
     }
 }
 
+/*esto es el css del nuevo codigo de las letras q se mueven*/
+main {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+main .contenedor-img {
+    max-width: 30%;
+    margin-left: 70rem;
+}
+
+.contenedor {
+    background-color: #fff;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.contenedor-texto .titulo {
+    font-size: 100px;
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+
+.contenedor-texto .saludo {
+    font-weight: bold;
+    color: #ffc106;
+    font-style: normal;
+}
+
+.contenedor-texto p {
+    margin-bottom: 40px;
+    line-height: 36px;
+}
+
 /*Este es el menu pero el logo esto es si el logo es en texto*/
 /*header .brand {
     position: relative;
@@ -223,37 +261,5 @@ section {
 /*esto opaca las letras
 .hidden {
     opacity: 0;
-}
-*/
-
-/* esto me esta afectando el menu con las rallas debo correguir para modificar el efecto de las letras que se mueven 
-.console-container {
-    font-size: 200px;
-    text-align: center;
-    height: 450px;
-    width: 900px;
-    display: inline-block;
-    position: relative;
-    color: white;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-
-.console-container {
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    font-size: 58px;
-    font-weight: 700;
-
-}
-
-.console-underscore {
-    display: inline-block;
-    position: relative;
-    top: -0.14em;
-    left: 10px;
 }
 */

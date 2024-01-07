@@ -4,55 +4,24 @@ window.addEventListener("scroll",function(){
     header.classList.toggle("sticky", window.scrollY > 0);
 })
 
-// esto es para que las letras se muevan 
-// function([string1, string2],target id,[color1,color2])    
-consoleText(['Hello World.', 'Bienvenido a TEQLE!'], 'text',['black','blue','lightblue']);
+//Efecto del texto escritura
+var typed = new Typed('.typed', {
+//	strings: [
+//		'<i class="saludo">Hola universo</i>',
+//		'<i class="saludo">Bienvenido a</i>',
+//		'<i class="saludo">Teqle!</i>',
+//	],
+	stringsElement: '#cadenas-texto', // ID del elemento que contiene cadenas de texto a mostrar.
+	typeSpeed: 75, // Velocidad en mlisegundos para poner una letra,
+	startDelay: 300, // Tiempo de retraso en iniciar la animacion. Aplica tambien cuando termina y vuelve a iniciar,
+	backSpeed: 75, // Velocidad en milisegundos para borrrar una letra,
+	smartBackspace: true, // Eliminar solamente las palabras que sean nuevas en una cadena de texto.
+	shuffle: false, // Alterar el orden en el que escribe las palabras.
+	backDelay: 1500, // Tiempo de espera despues de que termina de escribir una palabra.
+	loop: true, // Repetir el array de strings
+	loopCount: false, // Cantidad de veces a repetir el array.  false = infinite
+	showCursor: true, // Mostrar cursor palpitanto
+	cursorChar: '|', // Caracter para el cursor
+	contentType: 'html', // 'html' o 'null' para texto sin formato
+});
 
-function consoleText(words, id, colors) {
-  if (colors === undefined) colors = ['#fff'];
-  var visible = true;
-  var con = document.getElementById('console');
-  var letterCount = 1;
-  var x = 1;
-  var waiting = false;
-  var target = document.getElementById(id)
-  target.setAttribute('style', 'color:' + colors[0])
-  window.setInterval(function() {
-
-    if (letterCount === 0 && waiting === false) {
-      waiting = true;
-      target.innerHTML = words[0].substring(0, letterCount)
-      window.setTimeout(function() {
-        var usedColor = colors.shift();
-        colors.push(usedColor);
-        var usedWord = words.shift();
-        words.push(usedWord);
-        x = 1;
-        target.setAttribute('style', 'color:' + colors[0])
-        letterCount += x;
-        waiting = false;
-      }, 1000)
-    } else if (letterCount === words[0].length + 1 && waiting === false) {
-      waiting = true;
-      window.setTimeout(function() {
-        x = -1;
-        letterCount += x;
-        waiting = false;
-      }, 1000)
-    } else if (waiting === false) {
-      target.innerHTML = words[0].substring(0, letterCount)
-      letterCount += x;
-    }
-  }, 120)
-  window.setInterval(function() {
-    if (visible === true) {
-      con.className = 'console-underscore hidden'
-      visible = false;
-
-    } else {
-      con.className = 'console-underscore'
-
-      visible = true;
-    }
-  }, 400)
-}

@@ -155,31 +155,36 @@ header.sticky a {
 }
 
 /*esto es el css del nuevo codigo de las letras q se mueven*/
-main {
+.main {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-main .contenedor-img {
+.main .contenedor-img {
     max-width: 30%;
-    margin-left: 70rem;
-}
-
-.contenedor {
-    background-color: #fff;
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 40px;
-    border-radius: 10px;
+    margin-right: 50rem;
 }
 
 .contenedor-texto .titulo {
-    font-size: 100px;
+    font-size: 80px;
     font-weight: normal;
     margin-bottom: 40px;
 }
+
+.contenedor-texto .saludo {
+    font-weight: bold;
+    color: #ffc106;
+    font-style: normal;
+}
+
+.contenedor-texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20rem;
+}
+
 
 .contenedor-texto .saludo {
     font-weight: bold;

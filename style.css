@@ -8,6 +8,15 @@
     list-style: none;
 }
 
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: none;
+    padding: 15px 0;
+    z-index: 1000;
+}
+
 .body {
     background: url(./img/2.jpg);
     width: 100%;
@@ -189,7 +198,7 @@ header.sticky a {
 }
 
 .contenedor-texto .titulo {
-    font-size: 80px;
+    font-size: 55px;
     font-weight: normal;
     margin-bottom: 40px;
 }
@@ -289,49 +298,59 @@ section {
 }
 
 /*Esta es la primera seccion donde van las categorias*/
-.sec1 {
+.servicios {
+    padding-top: 30px;
+    width: 100%;
+    height: 100vh;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    /* Ajusta según el ancho máximo deseado */
+    margin: 120px;
+    /* Ajusta los márgenes del contenedor */
 }
 
-.servicios .card {
+.sec1.card {
     position: relative;
-    width: 600px;
-    height: 350px;
     border-radius: 20px;
+    overflow: visible;
+    /* Hace que el contenido que se desborda sea visible */
     display: flex;
     align-items: center;
     border-radius: 20px;
     transition: 0.5s;
+    background: transparent;
+    /* Hacer el fondo transparente */
+    border: none;
+    /* Eliminar cualquier borde */
+    /* ... tu estilo existente para .sec1.card ... */
+    width: calc(33% - 40px);
+    /* Ajusta el ancho de cada caja, con márgenes */
+    margin: 2px;
+    /* Ajusta los márgenes entre las cajas */
+    box-sizing: border-box;
 }
 
-.servicios .card .circle {
+.sec1.card .circle {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    overflow: hidden;
-}
-
-.servicios .card .circle::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background: red;
     clip-path: circle(120px at center);
     transition: .5s;
 }
 
-.servicios .card:hover .circle:before {
+.sec1.card:hover .circle {
     background: blue;
     clip-path: circle(400px at center);
 }
 
-.servicios .card .imgsec1 {
+.sec1.card .imgsec1 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -341,50 +360,81 @@ section {
     transition: .5s;
 }
 
-.servicios .card:hover .imgsec1 {
-    left: 72%;
-    height: 500px;
+.sec1.card:hover .imgsec1 {
+    left: 80%;
+    /* Ajusta el valor según sea necesario */
+    height: 320px;
+    /* Mantenemos el ajuste de altura para que la imagen se expanda */
 }
 
-.servicios .card .content {
+.sec1.card .content {
     position: relative;
     width: 50%;
     right: 5%;
-    padding: 20px 20px 20px 40px;
-    transition: .5s;
+    padding: 15px;
+    transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+    /* Ajustamos las propiedades afectadas por la transición */
     opacity: 0;
     visibility: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
-.servicios .card:hover .content {
-    left: 0;
+.sec1.card:hover .content {
+    transform: translateX(-40%);
+    /* Ajustamos el valor del desplazamiento */
     opacity: 1;
     visibility: visible;
 }
 
-.servicios.card:hover .content h2 {
+.sec1.card .content h2 {
     color: white;
     text-transform: uppercase;
     font-size: 2em;
     line-height: 1em;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    transition: .5s;
+    /* Agregamos transición para el hover */
 }
 
-.servicios.card:hover .content p {
+.sec1.card .content p {
     color: white;
+    margin-bottom: 15px;
+    align-self: flex-start;
+    /* Alinea el párrafo a la izquierda */
+    transition: .5s;
+    /* Agregamos transición para el hover */
 }
 
-.servicios .card:hover .content a {
+.sec1.card:hover .content p {
+    margin-left: -0%;
+    /* Desplaza a la izquierda al hacer hover */
+}
+
+.sec1.card .content a {
     position: relative;
     color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
     background-color: #ffa502;
-    color: #ffffff;
-    margin-top: 10px;
+    margin-top: auto;
+    align-self: center;
     display: inline-block;
     text-decoration: none;
     font-weight: 700;
+    text-align: center;
+    font-size: 16px;
+    /* Tamaño original del texto */
+    transition: background-color 0.5s ease, transform 0.5s ease, font-size 0.5s ease;
+    /* Añadimos la propiedad font-size para la transición */
+}
+
+.sec1.card:hover .content a {
+    background-color: #ff8502;
+    transform: scale(0.8);
+    font-size: 18px;
+    /* Tamaño del texto al hacer hover, ajusta según sea necesario */
 }
 
 /*Responsive de la seccion 1 hay q arreglarla*/

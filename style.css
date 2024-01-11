@@ -308,7 +308,6 @@ section {
     flex-wrap: wrap;
     max-width: 1200px;
     /* Ajusta según el ancho máximo deseado */
-
 }
 
 .servicios h1 {
@@ -450,7 +449,6 @@ section {
 }
 
 /*esta es la seccion 2 de opiniones*/
-
 .sec2-opiniones {
     position: relative;
     width: 100%;
@@ -459,6 +457,15 @@ section {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+
+.sec2-opiniones h2 {
+    color: #fffb00;
+    font-size: 3em;
+    width: 100%;
+    margin: -10px auto 80px;
+    /* Ajusto el margen superior e inferior y centro horizontalmente con 'auto' */
+    text-align: center;
 }
 
 .sec2-opiniones .swiper-container {
@@ -498,17 +505,6 @@ section {
     padding-top: 90px;
     color: #333;
     /* Cambié el color del texto para mejorar la legibilidad */
-}
-
-.testimonialbox .quote {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    opacity: 0.2;
-    width: 20px;
-    /* Ajusta el ancho según sea necesario */
-    height: auto;
-    /* Ajusta la altura según sea necesario */
 }
 
 .testimonialbox .contentopiniones {
@@ -560,7 +556,9 @@ section {
     color: #667;
 }
 
-
+.swiper-container {
+    overflow: visible !important;
+}
 
 /*esto opaca las letras
 .hidden {

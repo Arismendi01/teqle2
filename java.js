@@ -26,30 +26,21 @@ var typed = new Typed('.typed', {
 });
 
 //sección opiniones
-var cantidadTarjetas = 6; // Ajusta este valor según la cantidad de tarjetas que tengas
-
-var slidesPerViewConfig = 3; // Número de tarjetas visibles en el centro
-
-if (cantidadTarjetas <= slidesPerViewConfig) {
-    slidesPerViewConfig = cantidadTarjetas;
-}
-
 var swiper = new Swiper('.swiper-container', {
-    effect: 'coverflow',
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: slidesPerViewConfig,
-    coverflowEffect: {
-        rotate: 0, // Ajusta el ángulo de rotación si lo deseas
-        stretch: 100, // Ajusta el estiramiento según sea necesario
-        depth: 100,
-        modifier: 1,
-        slideShadows: false,
-    },
-    loop: true,
-    speed: 800,
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-    },
-});
+	effect: 'coverflow',
+	grabCursor: true,
+	centeredSlides: true,
+	slidesPerView: 'auto',
+	coverflowEffect: {
+	  rotate: 0,
+	  stretch: 0,
+	  depth: 100,
+	  modifier: 1,
+	  slideShadows: true,
+	},
+	loop: true,
+	autoplay: {
+	  delay: 5000, // 5 segundos de retraso entre diapositivas
+	},
+	speed: 800, // Ajusta la velocidad de transición según sea necesario
+  });

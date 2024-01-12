@@ -299,6 +299,32 @@ section {
 }
 
 /*Esta es la primera seccion donde van las categorias*/
+.content-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: -10px auto 80px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color: #ff8502;
+}
+
+.content-area .opiniones .title {
+    display: flex;
+    font-size: 3rem;
+    color: var(--white);
+    transition: all .6s;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+/*
 .servicios {
     width: 100%;
     height: 100vh;
@@ -307,17 +333,61 @@ section {
     justify-content: space-around;
     flex-wrap: wrap;
     max-width: 1200px;
-    /* Ajusta según el ancho máximo deseado */
+    /* Ajusta según el ancho máximo deseado 
 }
 
 .servicios h1 {
-    /*este es para modificar el h1*/
+    /*este es para modificar el h1
     color: #fffb00;
     font-size: 2em;
     margin-bottom: 20px;
     width: 100%;
     max-width: 1200px;
     margin: 70px auto;
+    /* Ajusta el margen superior e inferior según sea necesario 
+    text-align: center;
+}
+*/
+
+.concept-seven {
+    background: url(https://meowlivia.s3.us-east-2.amazonaws.com/codepen/background/fries.jpg) top center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        letter-spacing: 35px;
+        position: relative;
+
+        &:before {
+            content: "fries";
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            max-width: 400px;
+            color: transparent;
+            letter-spacing: 10px;
+            text-shadow: none;
+        }
+    }
+
+    &:hover h1:before {
+        transition: 0.6s ease;
+        color: rgba(255, 255, 255, 0.8);
+        animation: jump-out 0.6s ease forwards;
+    }
+}
+
+/* Estilo para el h1 dentro de .content-area */
+.content-area h1.title {
+    font-size: 3rem;
+    color: var(--white);
+    transition: all .6s;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 35px auto;
     /* Ajusta el margen superior e inferior según sea necesario */
     text-align: center;
 }
@@ -328,6 +398,7 @@ section {
     justify-content: space-around;
 }
 
+/* Estilo para las sec1.card */
 .sec1.card {
     position: relative;
     border-radius: 20px;
@@ -346,11 +417,9 @@ section {
 
 .sec1.card .circle {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
+    width: 120%;
+    height: 120%;
+    border-radius: 40px;
     background: red;
     clip-path: circle(120px at center);
     transition: .5s;
@@ -359,6 +428,8 @@ section {
 .sec1.card:hover .circle {
     background: blue;
     clip-path: circle(400px at center);
+    width: 105%;
+    height: 105%;
 }
 
 .sec1.card .imgsec1 {
@@ -372,8 +443,8 @@ section {
 }
 
 .sec1.card:hover .imgsec1 {
-    left: 80%;
-    /* Ajusta el valor según sea necesario */
+    left: 70%;
+    /* este es para donde agarra la imagen */
     height: 300px;
     /* Mantenemos el ajuste de altura para que la imagen se expanda */
 }
@@ -404,14 +475,15 @@ section {
     text-transform: uppercase;
     font-size: 1.5em;
     line-height: 1em;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     transition: .5s;
+    padding: 15px;
     /* Agregamos transición para el hover */
 }
 
 .sec1.card .content p {
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     align-self: flex-start;
     /* Alinea el párrafo a la izquierda */
     transition: .5s;
@@ -426,7 +498,7 @@ section {
 .sec1.card .content a {
     position: relative;
     color: white;
-    padding: 8px 12px;
+    padding: 4px 6px;
     border-radius: 8px;
     background-color: #ffa502;
     margin-top: auto;
@@ -459,13 +531,32 @@ section {
     overflow: hidden;
 }
 
-.sec2-opiniones h2 {
-    color: #fffb00;
+.content-area .opiniones h2 {
     font-size: 3em;
     width: 100%;
     margin: -10px auto 80px;
     /* Ajusto el margen superior e inferior y centro horizontalmente con 'auto' */
     text-align: center;
+}
+
+/*Este es el efecto de las letras que se mueven*/
+.content-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: -10px auto 80px;
+
+    h2 {
+        font-size: 4.5rem;
+        color: var(--white);
+        transition: all .6s;
+
+        &:hover {
+            color: var(--darkblue);
+        }
+    }
 }
 
 .sec2-opiniones .swiper-container {

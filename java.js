@@ -112,7 +112,7 @@ var swiper = new Swiper('.swiper-container', {
 // The Titles
 let serviciosTitle = "Nuestros Servicios";
 let opinionesTitle = "Opiniones";
-let clientes2Title = "Clientes2";
+let clientes2Title = "Clientes";
 
 let getServiciosTitle = document.getElementById("servicios-section").querySelector(".title");
 let getOpinionesTitle = document.getElementById("opiniones-section").querySelector(".opiniones");

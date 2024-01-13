@@ -112,12 +112,15 @@ var swiper = new Swiper('.swiper-container', {
 // The Titles
 let serviciosTitle = "Nuestros Servicios";
 let opinionesTitle = "Opiniones";
+let clientes2Title = "Clientes2";
 
 let getServiciosTitle = document.getElementById("servicios-section").querySelector(".title");
 let getOpinionesTitle = document.getElementById("opiniones-section").querySelector(".opiniones");
+let getClientes2Title = document.getElementById("clientes2-section").querySelector(".clientes2");
 
 let ServiciosTitleEffect = new ScrambleTheText(getServiciosTitle, serviciosTitle);
 let OpinionesTitleEffect = new ScrambleTheText(getOpinionesTitle, opinionesTitle);
+let Clientes2TitleEffect = new ScrambleTheText(getClientes2Title, clientes2Title);
 
 let nextServiciosTitle = () => {
     ServiciosTitleEffect.setText(serviciosTitle).then(() => {
@@ -131,38 +134,33 @@ let nextOpinionesTitle = () => {
     });
 };
 
+let nextClientes2Title = () => {
+    Clientes2TitleEffect.setText(clientes2Title).then(() => {
+        setTimeout(nextClientes2Title, 1500);
+    });
+};
+
 nextServiciosTitle();
 nextOpinionesTitle();
+nextClientes2Title();
 
 
 // Configuración del carrusel de marcas seccion
 const carrusel = document.querySelector(".carrusel-items");
 
-let maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
-let intervalo = null;
-let step = 1;
-const start = () => {
-    intervalo = setInterval(function () {
-        carrusel.scrollLeft = carrusel.scrollLeft + step;
-        if (carrusel.scrollLeft === maxScrollLeft) {
-            step = step * -1;
-        } else if (carrusel.scrollLeft === 0) {
-            step = step * -1;
-        }
-    }, 10);
-};
-
-const stop = () => {
-    clearInterval(intervalo);
-};
-
 carrusel.addEventListener("mouseover", () => {
-    stop();
+    carrusel.style.animationPlayState = "paused";
 });
 
 carrusel.addEventListener("mouseout", () => {
-    start();
+    carrusel.style.animationPlayState = "running";
 });
 
-start();
+carrusel.addEventListener("animationiteration", () => {
+    carrusel.style.animationPlayState = "paused";
+    setTimeout(() => {
+        carrusel.style.transform = "translateX(0)";
+        carrusel.style.animationPlayState = "running";
+    }, 0);
+});
 

@@ -16,18 +16,21 @@
 <body class="body">
     <!--Este es el menú tipo sticky-->
     <header class="menu">
-        <a href="index.html"><img class="logo" src="img/Teqle!logo.png" alt="Logo de teqle"></a>
-        <ul>
-            <li><a href="./pages/marketing.html">Marketing</a></li>
-            <li><a href="./pages/consultoria.html">Consultoría</a></li>
-            <li><a href="./pages/desarrolloweb.html">Desarrollo Web</a></li>
-            <li><a href="./pages/diseño.html">Diseño</a></li>
-            <li><a href="./pages/serviciotecnico.html">Servicio Técnico</a></li>
-            <li><a href="./pages/contacto.html">Contacto</a></li>
-        </ul>
+        <a href="index.html"><img class="logo" src="img/Teqle!logo.png" alt="Logo de teqle"></a><button
+            class="abrir-menu">abrir</button>
+        <nav class="nav">
+            <ul>
+                <li><a href="./pages/marketing.html">Marketing</a></li>
+                <li><a href="./pages/consultoria.html">Consultoría</a></li>
+                <li><a href="./pages/desarrolloweb.html">Desarrollo Web</a></li>
+                <li><a href="./pages/diseño.html">Diseño</a></li>
+                <li><a href="./pages/serviciotecnico.html">Servicio Técnico</a></li>
+                <li><a href="./pages/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
-    <section class="main">
-        <main>
+    <main>
+        <section class="main">
             <!--Este banner es para agregar efecto en las palabras-->
             <div class="contenedor-texto">
                 <h2 class="titulo">
@@ -39,245 +42,373 @@
                     <p><i class="saludo">Teqle!</i></p>
                 </div>
                 <div class="img">
-                    <img class=" img2" src="./img/niñoteqle.png" alt="niño astronauta">
+                    <img class="img2" src="./img/niñoteqle.png" alt="niño astronauta">
                 </div>
             </div>
-        </main>
-    </section>
-    <!--Efecto paralax las sec y el efecto de las cajas con la imagen-->
-    <section class="sec1">
-        <div class="content-area" id="servicios-section">
-            <h1 class="title">Nuestros Servicios</h1>
-            <div class="sec1 card">
-                <div class="circle"></div>
-                <div class="content">
-                    <h2>Hola Teqle!</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, officiis?</p>
-                    <a href="#">Saber más</a>
-                </div>
-                <img class="imgsec1" src="./img/niñoteqle.png" alt="Niño teqle">
-            </div>
-            <div class="sec1 card">
-                <div class="circle"></div>
-                <div class="content">
-                    <h2>Hola Teqle!</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, officiis?</p>
-                    <a href="#">Saber más</a>
-                </div>
-                <img class="imgsec1" src="./img/niñoteqle.png" alt="Niño teqle">
-            </div>
-            <div class="sec1 card">
-                <div class="circle"></div>
-                <div class="content">
-                    <h2>Hola Teqle!</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, officiis?</p>
-                    <a href="#">Saber más</a>
-                </div>
-                <img class="imgsec1" src="./img/niñoteqle.png" alt="Niño teqle">
-            </div>
-            <div class="sec1 card">
-                <div class="circle"></div>
-                <div class="content">
-                    <h2>Hola Teqle!</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, officiis?</p>
-                    <a href="#">Saber más</a>
-                </div>
-                <img class="imgsec1" src="./img/niñoteqle.png" alt="Niño teqle">
-            </div>
-            <div class="sec1 card">
-                <div class="circle"></div>
-                <div class="content">
-                    <h2>Hola Teqle!</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, officiis?</p>
-                    <a href="#">Saber más</a>
-                </div>
-                <img class="imgsec1" src="./img/niñoteqle.png" alt="Niño teqle">
-            </div>
-            <div class="sec1 card">
-                <div class="circle"></div>
-                <div class="content">
-                    <h2>Hola Teqle!</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, officiis?</p>
-                    <a href="#">Saber más</a>
-                </div>
-                <img class="imgsec1" src="./img/niñoteqle.png" alt="Niño teqle">
-            </div>
-        </div>
-    </section>
 
-    <section class="sec2-opiniones">
-        <div class="swiper-container">
-            <div class="content-area" id="opiniones-section">
-                <h2 class="opiniones">Opiniones</h2>
+        </section>
+
+        <section class="hero" id="hero">
+            <!--Cursor diferente-->
+            <div class="custom-cursor site-wide">
+                <div class="pointer"></div>
+                <div class="cursor-image" id="playCursor" style="background-image: url('/img/play.png')"></div>
+                <div class="cursor-image" id="pauseCursor" style="background-image: url('/img/pause.png')"></div>
             </div>
-            <div class="swiper-wrapper">
-                <!-- Testimonio 1 -->
-                <div class="swiper-slide">
-                    <div class="testimonialbox">
-                        <div class="contentopiniones">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero reprehenderit
-                                doloribus
-                                incidunt recusandae perferendis itaque! Eius ullam impedit adipisci error.</p>
-                            <div class="details">
-                                <div class="imgbox">
-                                    <img src="img/niñoteqle.png" alt="">
+            <div class="boxcursor" id="boxcursor">
+                <video id="myVideo" autoplay muted playsinline>
+                    <source src="videos/video (2160p).mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+        <!--Efecto paralax las sec y el efecto de las cajas con la imagen-->
+        <section class="sec1">
+            <div class="content-area" id="servicios-section">
+                <h1 class="title">Nuestros Servicios</h1>
+                <div class="sec1 card">
+                    <div class="circle"></div>
+                    <div class="content">
+                        <h2>Hola Teqle!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, officiis?</p>
+                        <a href="#">Saber más</a>
+                    </div>
+                    <img class="imgsec1" src="./img/niñoteqle.png" alt="Niño teqle">
+                </div>
+                <div class="sec1 card">
+                    <div class="circle"></div>
+                    <div class="content">
+                        <h2>Hola Teqle!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, officiis?</p>
+                        <a href="#">Saber más</a>
+                    </div>
+                    <img class="imgsec1" src="./img/niñoteqle.png" alt="Niño teqle">
+                </div>
+                <div class="sec1 card">
+                    <div class="circle"></div>
+                    <div class="content">
+                        <h2>Hola Teqle!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, officiis?</p>
+                        <a href="#">Saber más</a>
+                    </div>
+                    <img class="imgsec1" src="./img/niñoteqle.png" alt="Niño teqle">
+                </div>
+                <div class="sec1 card">
+                    <div class="circle"></div>
+                    <div class="content">
+                        <h2>Hola Teqle!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, officiis?</p>
+                        <a href="#">Saber más</a>
+                    </div>
+                    <img class="imgsec1" src="./img/niñoteqle.png" alt="Niño teqle">
+                </div>
+                <div class="sec1 card">
+                    <div class="circle"></div>
+                    <div class="content">
+                        <h2>Hola Teqle!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, officiis?</p>
+                        <a href="#">Saber más</a>
+                    </div>
+                    <img class="imgsec1" src="./img/niñoteqle.png" alt="Niño teqle">
+                </div>
+                <div class="sec1 card">
+                    <div class="circle"></div>
+                    <div class="content">
+                        <h2>Hola Teqle!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, officiis?</p>
+                        <a href="#">Saber más</a>
+                    </div>
+                    <img class="imgsec1" src="./img/niñoteqle.png" alt="Niño teqle">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="sec2-opiniones">
+            <div class="swiper-container">
+                <div class="content-area" id="opiniones-section">
+                    <h2 class="opiniones">Opiniones</h2>
+                </div>
+                <div class="swiper-wrapper">
+                    <!-- Testimonio 1 -->
+                    <div class="swiper-slide">
+                        <div class="testimonialbox">
+                            <div class="contentopiniones">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero reprehenderit
+                                    doloribus
+                                    incidunt recusandae perferendis itaque! Eius ullam impedit adipisci error.</p>
+                                <div class="details">
+                                    <div class="imgbox">
+                                        <img src="img/niñoteqle.png" alt="">
+                                    </div>
+                                    <h3>Someone famous <br><span>Creative Designer</span></h3>
                                 </div>
-                                <h3>Someone famous <br><span>Creative Designer</span></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonio 2 -->
+                    <div class="swiper-slide">
+                        <div class="testimonialbox">
+                            <div class="contentopiniones">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero reprehenderit
+                                    doloribus
+                                    incidunt recusandae perferendis itaque! Eius ullam impedit adipisci error.</p>
+                                <div class="details">
+                                    <div class="imgbox">
+                                        <img src="img/niñoteqle.png" alt="">
+                                    </div>
+                                    <h3>Someone famous <br><span>Creative Designer</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonio 3 -->
+                    <div class="swiper-slide">
+                        <div class="testimonialbox">
+                            <div class="contentopiniones">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero reprehenderit
+                                    doloribus
+                                    incidunt recusandae perferendis itaque! Eius ullam impedit adipisci error.</p>
+                                <div class="details">
+                                    <div class="imgbox">
+                                        <img src="img/niñoteqle.png" alt="">
+                                    </div>
+                                    <h3>Someone famous <br><span>Creative Designer</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonio 4 -->
+                    <div class="swiper-slide">
+                        <div class="testimonialbox">
+                            <div class="contentopiniones">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero reprehenderit
+                                    doloribus
+                                    incidunt recusandae perferendis itaque! Eius ullam impedit adipisci error.</p>
+                                <div class="details">
+                                    <div class="imgbox">
+                                        <img src="img/niñoteqle.png" alt="">
+                                    </div>
+                                    <h3>Someone famous <br><span>Creative Designer</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonio 5 -->
+                    <div class="swiper-slide">
+                        <div class="testimonialbox">
+                            <div class="contentopiniones">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero reprehenderit
+                                    doloribus
+                                    incidunt recusandae perferendis itaque! Eius ullam impedit adipisci error.</p>
+                                <div class="details">
+                                    <div class="imgbox">
+                                        <img src="img/niñoteqle.png" alt="">
+                                    </div>
+                                    <h3>Someone famous <br><span>Creative Designer</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonio 6 -->
+                    <div class="swiper-slide">
+                        <div class="testimonialbox">
+                            <div class="contentopiniones">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero reprehenderit
+                                    doloribus
+                                    incidunt recusandae perferendis itaque! Eius ullam impedit adipisci error.</p>
+                                <div class="details">
+                                    <div class="imgbox">
+                                        <img src="img/niñoteqle.png" alt="">
+                                    </div>
+                                    <h3>Someone famous <br><span>Creative Designer</span></h3>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Testimonio 2 -->
-                <div class="swiper-slide">
-                    <div class="testimonialbox">
-                        <div class="contentopiniones">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero reprehenderit
-                                doloribus
-                                incidunt recusandae perferendis itaque! Eius ullam impedit adipisci error.</p>
-                            <div class="details">
-                                <div class="imgbox">
-                                    <img src="img/niñoteqle.png" alt="">
-                                </div>
-                                <h3>Someone famous <br><span>Creative Designer</span></h3>
+                <div class="content-area" id="clientes2-section"> <!--Seccion 3  de carrusel de marcas-->
+                    <h2 class="clientes2">Clientes</h2>
+                    <!-- Contenido de la sección de clientes -->
+                    <div class="carrusel">
+                        <div class="carrusel-items">
+                            <div class="carrusel-item">
+                                <img src="img/Teqle!logo.png" alt="" />
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonio 3 -->
-                <div class="swiper-slide">
-                    <div class="testimonialbox">
-                        <div class="contentopiniones">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero reprehenderit
-                                doloribus
-                                incidunt recusandae perferendis itaque! Eius ullam impedit adipisci error.</p>
-                            <div class="details">
-                                <div class="imgbox">
-                                    <img src="img/niñoteqle.png" alt="">
-                                </div>
-                                <h3>Someone famous <br><span>Creative Designer</span></h3>
+                            <div class="carrusel-item">
+                                <img src="img/Teqle!logo.png" alt="" />
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonio 4 -->
-                <div class="swiper-slide">
-                    <div class="testimonialbox">
-                        <div class="contentopiniones">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero reprehenderit
-                                doloribus
-                                incidunt recusandae perferendis itaque! Eius ullam impedit adipisci error.</p>
-                            <div class="details">
-                                <div class="imgbox">
-                                    <img src="img/niñoteqle.png" alt="">
-                                </div>
-                                <h3>Someone famous <br><span>Creative Designer</span></h3>
+                            <div class="carrusel-item">
+                                <img src="img/Teqle!logo.png" alt="" />
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonio 5 -->
-                <div class="swiper-slide">
-                    <div class="testimonialbox">
-                        <div class="contentopiniones">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero reprehenderit
-                                doloribus
-                                incidunt recusandae perferendis itaque! Eius ullam impedit adipisci error.</p>
-                            <div class="details">
-                                <div class="imgbox">
-                                    <img src="img/niñoteqle.png" alt="">
-                                </div>
-                                <h3>Someone famous <br><span>Creative Designer</span></h3>
+                            <div class="carrusel-item">
+                                <img src="img/Teqle!logo.png" alt="" />
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonio 6 -->
-                <div class="swiper-slide">
-                    <div class="testimonialbox">
-                        <div class="contentopiniones">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero reprehenderit
-                                doloribus
-                                incidunt recusandae perferendis itaque! Eius ullam impedit adipisci error.</p>
-                            <div class="details">
-                                <div class="imgbox">
-                                    <img src="img/niñoteqle.png" alt="">
-                                </div>
-                                <h3>Someone famous <br><span>Creative Designer</span></h3>
+                            <div class="carrusel-item">
+                                <img src="img/Teqle!logo.png" alt="" />
+                            </div>
+                            <div class="carrusel-item">
+                                <img src="img/Teqle!logo.png" alt="" />
+                            </div>
+                            <div class="carrusel-item">
+                                <img src="img/Teqle!logo.png" alt="" />
+                            </div>
+                            <div class="carrusel-item">
+                                <img src="img/Teqle!logo.png" alt="" />
+                            </div>
+                            <div class="carrusel-item">
+                                <img src="img/Teqle!logo.png" alt="" />
+                            </div>
+                            <div class="carrusel-item">
+                                <img src="img/Teqle!logo.png" alt="" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-
-
-
-    <!--Seccion 3  de carrusel de marcas-->
-    <section class="sec3-clientes">
-        <div class="content-area" id="clientes2-section">
-            <h2 class="clientes2">Clientes</h2>
-            <!-- Contenido de la sección de clientes -->
-            <div class="carrusel">
-                <div class="carrusel-items">
-                    <div class="carrusel-item">
-                        <img src="img/Teqle!logo.png" alt="" />
-                    </div>
-                    <div class="carrusel-item">
-                        <img src="img/Teqle!logo.png" alt="" />
-                    </div>
-                    <div class="carrusel-item">
-                        <img src="img/Teqle!logo.png" alt="" />
-                    </div>
-                    <div class="carrusel-item">
-                        <img src="img/Teqle!logo.png" alt="" />
-                    </div>
-                    <div class="carrusel-item">
-                        <img src="img/Teqle!logo.png" alt="" />
-                    </div>
-                    <div class="carrusel-item">
-                        <img src="img/Teqle!logo.png" alt="" />
-                    </div>
-                    <div class="carrusel-item">
-                        <img src="img/Teqle!logo.png" alt="" />
-                    </div>
-                    <div class="carrusel-item">
-                        <img src="img/Teqle!logo.png" alt="" />
-                    </div>
-                    <div class="carrusel-item">
-                        <img src="img/Teqle!logo.png" alt="" />
-                    </div>
-                    <div class="carrusel-item">
-                        <img src="img/Teqle!logo.png" alt="" />
-                    </div>
+        <section class="sec3-clientes">
+            <div class="content-area" id="team">
+                <h2 class="team">Team Teqle!</h2>
+                <div class="img3">
+                    <img src="./img/niñoteqle.png" alt="niño astronauta">
+                    <h3>El creativo</h3>
+                    <p>(Eso fue lo que dijo en la entrevista)</p>
+                </div>
+                <div class="img3">
+                    <img src="./img/niñoteqle.png" alt="niño astronauta">
+                    <h3>El que habla mucho</h3>
+                    <p>(Mejor no le den cuerda)</p>
+                </div>
+                <div class="img3">
+                    <img src="./img/niñoteqle.png" alt="niño astronauta">
+                    <h3>El chistoso</h3>
+                    <p>(Aun no entendemos su humor)</p>
+                </div>
+                <div class="img3">
+                    <img src="./img/niñoteqle.png" alt="niño astronauta">
+                    <h3>Aun no sabemos quien es</h3>
+                    <p>(Aunque es chevere)</p>
+                </div>
+                <div class="img3">
+                    <img src="./img/niñoteqle.png" alt="niño astronauta">
+                    <h3>La caprichosa</h3>
+                    <p>(Paciencia... Paciencia...)</p>
+                </div>
+                <div class="img3">
+                    <img src="./img/niñoteqle.png" alt="niño astronauta">
+                    <h3>El guapo</h3>
+                    <p>(Asi le dice su mamá)</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
 
-
-
-
-
-
+    <!--
     <section class="sec3"></section>
     <div class="contain">
         <p>3st Section</p>
     </div>
-    <section class="sec4"></section>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!--Este es el js de https://swiperjs.com para la secciones de opiniones-->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="java.js"></script>
+    <section class="sec4">
+    </section>
+    -->
+    <!--Footer-->
+    <footer class="footer">
+        <div class="page-wrapper">
+            <div id="waterdrop"></div>
+            <footer>
+                <div class="footer-top">
+                    <div class="pt-exebar"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
+                                <div class="widget footer_widget">
+                                    <h5 class="footer-title">Address</h5>
+                                    <div class="gem-contacts">
+                                        <div class="gem-contacts-item gem-contacts-address">
+                                            Corporate Office :<br> Doon House, B-275(A), First floor
+                                            Sector-57, Shushant Lok 3
+                                            Near Hong Kong Bazzar, Gurugram Pin 122001, Haryana.
+                                        </div>
+                                        <div class="gem-contacts-item gem-contacts-phone">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            Phone: <a href="">+91-9122588799</a>
+                                        </div>
+                                        <div class="gem-contacts-item gem-contacts-address mt-2">
+                                            Reg. Office :<br> Doon House, D2/3,
+                                            4th Floor, Chandra Tower, IDBI Bank Building
+                                            Dimna Road, Mango, Jamshedpur-831012, Jharkhand.
+                                        </div>
+                                        <div class="gem-contacts-item gem-contacts-phone">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            Phone: <a>+91 9122588799</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+                                <div class="row">
+                                    <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                                        <div class="widget footer_widget">
+                                            <h5 class="footer-title">Recent News</h5>
+                                            <ul class="posts styled" id="recentNewsList"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                                        <div class="widget">
+                                            <h5 class="footer-title">Email Us</h5>
+                                            <div class="textwidget" id="emailFormContainer"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
+                                <div class="widget widget_gallery gallery-grid-4">
+                                    <h5 class="footer-title">Our Gallery</h5>
+                                    <ul class="magnific-image" id="galleryList"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="footer-site-info">2020 © <a
+                                        href="https://www.youtube.com/watch?v=pdr4IzBpacI&t=34s" target="_blank">Top
+                                        HTML &
+                                        CSS Program </a></div>
+                            </div>
+                            <div class="col-md-6">
+                                <nav id="footer-navigation" class="site-navigation footer-navigation centered-box"
+                                    role="navigation">
+                                    <ul id="footer-menu" class="nav-menu styled clearfix inline-inside"></ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-3">
+                                <div id="footer-socials">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <!--Este es el js de https://swiperjs.com para la secciones de opiniones-->
+            <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous"></script>
+            <script src="java.js"></script>
 </body>
 
 </html>

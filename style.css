@@ -38,6 +38,24 @@
     border-radius: 5px;
 }
 
+.nav {
+    display: flex
+}
+
+.nav ul {
+    display: flex;
+}
+
+.nav-list {
+    display: flex;
+}
+
+.img2,
+.img3 img {
+    max-width: 100%;
+    height: auto;
+}
+
 /*Este es el menu*/
 header {
     position: fixed;
@@ -48,7 +66,8 @@ header {
     justify-content: space-between;
     align-items: center;
     transition: 0.6s;
-
+    background-color: transparent;
+    transition: background-color 0.6s;
 }
 
 header .logo {
@@ -82,7 +101,7 @@ header ul li a {
     text-decoration: none;
     color: #fff;
     letter-spacing: 2px;
-    font-weight: 500px;
+    font-weight: normal;
     transition: 0.6;
 }
 
@@ -166,7 +185,7 @@ header.sticky a {
     position: relative;
     display: block;
     text-transform: uppercase;
-    color: none;
+    color: #ffffff;
     transition: .5s;
     z-index: 1;
 
@@ -184,7 +203,7 @@ header.sticky a {
 
 .main .contenedor-img {
     max-width: 30%;
-    margin-right: 50rem;
+    margin-right: 0;
 }
 
 .img2 {
@@ -247,6 +266,69 @@ header.sticky a {
 }
 */
 
+/*Este es el video*/
+:root {
+    --bg-color: #262626;
+}
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.capa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+    opacity: .5;
+    mix-blend-mode: overlay;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.capa.playing {
+    cursor: url('pause.png'), pointer;
+}
+
+.capa:not(.playing) {
+    cursor: url('play.png'), pointer;
+}
+
+#play {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.controles {
+    display: none;
+}
+
+.controles img {
+    width: 50px;
+    height: 50px;
+}
+
+.capa:hover .controles,
+.hero:hover .controles {
+    display: flex;
+}
+
 /*Estas son las secciones*/
 .sec1 {
     background: url(./img/1.jpg);
@@ -257,20 +339,6 @@ header.sticky a {
 
 .sec2-opiniones {
     background: url(./img/2.jpg);
-    background-position: bottom center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.sec3 {
-    background: url(./img/3.jpeg);
-    background-position: bottom center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.sec4 {
-    background: url(./img/4.jpg);
     background-position: bottom center;
     background-size: cover;
     background-attachment: fixed;
@@ -290,7 +358,7 @@ section {
     text-align: center;
 }
 
-/*Esta es la sección donde estan las  P, y dentro de la misma la p, aca le doy tamaño*/
+/*Esta es la sección donde estan las  P, aca le doy tamaño*/
 
 .contain p {
     font-size: 2.5rem;
@@ -455,7 +523,7 @@ section {
     right: 5%;
     padding: 15px;
     transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
-    /* Ajustamos las propiedades afectadas por la transición */
+    /* Ajusto las propiedades afectadas por la transición */
     opacity: 0;
     visibility: hidden;
     box-sizing: border-box;
@@ -546,7 +614,7 @@ section {
     justify-content: center;
     height: 100%;
     width: 100%;
-    margin: -10px auto 80px;
+    margin: -10px auto 20px;
 
     h2 {
         font-size: 4.5rem;
@@ -561,8 +629,8 @@ section {
 
 .sec2-opiniones .swiper-container {
     width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 840px;
+
 }
 
 .sec2-opiniones .swiper-slide {
@@ -616,9 +684,9 @@ section {
 }
 
 .testimonialbox .details .imgbox {
-    width: 80px;
+    width: 50px;
     /* Ajusta el ancho según sea necesario */
-    height: 80px;
+    height: 50px;
     /* Ajusta la altura según sea necesario */
     border-radius: 50%;
     overflow: hidden;
@@ -657,13 +725,10 @@ section {
 }
 */
 
-/*Sección 3 donde esta el carrusel de las marcas infinitas*/
+/* donde esta el carrusel de las marcas infinitas*/
 /* Estilos específicos para las imágenes más pequeñas en la sección de clientes */
-.sec3 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+.clientes2 {
+    margin: 20px;
 }
 
 /* Estilos específicos para el carrusel */
@@ -674,14 +739,16 @@ section {
 
 .carrusel-items {
     display: flex;
-    animation: scroll 10s linear infinite;
+    animation: scroll 15s linear infinite;
+    padding: -100px -100px;
 }
 
 .carrusel-item {
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 200px;
+    max-width: 200px;
     height: 50px;
     cursor: pointer;
+    transition: 1s;
 }
 
 .carrusel-item img {
@@ -692,10 +759,629 @@ section {
 
 @keyframes scroll {
     0% {
-        transform: translateX(0);
+        transform: translateX(-100%);
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(100%);
+    }
+}
+
+.carrusel-item:hover {
+    transform: scale(1.2);
+}
+
+/*seccion 3 clientes*/
+.sec3-clientes {
+    padding-top: 4em;
+}
+
+.content-area .team {
+    font-size: 3rem;
+    color: var(--white);
+    transition: all .6s;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 35px auto;
+    /* Ajusta el margen superior e inferior según sea necesario */
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.team {
+    position: relative;
+    width: 1200%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.sec3-clientes {
+    text-align: center;
+}
+
+.img3 {
+    margin: 15px;
+    text-align: center;
+    position: relative;
+}
+
+.img3 :hover {
+    transform: scale(1.2);
+    transition: .5s;
+}
+
+.img3 img {
+    max-width: 80%;
+    height: auto;
+    max-height: 350px;
+    /* Ajusta la altura máxima según sea necesario */
+}
+
+.img3 p {
+    bottom: -20px;
+    /* Ajuste de separación entre h3 y p */
+}
+
+.img3:hover h3,
+.img3:hover p {
+    color: #ffcc00;
+
+}
+
+.team {
+    margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Este es el estilo del cursor */
+.hero {
+    position: relative;
+}
+
+.custom-cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.site-wide {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.pointer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: black;
+    transition: width 0.1s ease-in-out, height 0.1s ease-in-out;
+}
+
+.site-wide.active .pointer {
+    width: 20px;
+    height: 20px;
+}
+
+.cursor-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    display: none;
+}
+
+.boxcursor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#playCursor {
+    background-image: url('/img/play.png');
+}
+
+#pauseCursor {
+    background-image: url('/img/pause.png');
+}
+
+/* Footer */
+.footer {
+    padding-top: 16em;
+}
+
+.page-wrapper {
+    position: flex;
+    width: 100%;
+    z-index: 11111;
+    top: 20px;
+}
+
+footer p,
+footer strong,
+footer b,
+footer {
+    color: #b0b0b0;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.footer-top {
+    background: #303030 url('/img/4.jpg') center/cover;
+    /* Ajusté la propiedad background y tiene una imagen de fondo*/
+    padding: 30px 0 20px;
+}
+
+.footer-top,
+.footer-bottom {
+    padding: 15px 0;
+    border-top: 1px solid #0e3edb;
+    /*color de las que dicen call*/
+    color: #b0b0b0;
+    /*Color de las letras del primer parrafo*/
+    font-family: 'poppings', sans-serif;
+}
+
+.footer-bottom {
+    padding: 15px 0;
+    border-top: 1px solid #1447ef;
+    /*color del border de la caja del footer*/
+    background-color: #ff8c00;
+    /*color del sub footer*/
+    color: #ea1818;
+    /*color del 2020*/
+}
+
+.footer-site-info {
+    font-size: 92.86%;
+    /*tamaño de la que dice top HTML*/
+}
+
+#footer-navigation,
+#footer-navigation li a,
+.custom-footer,
+.custom-footer li a {
+    color: #000000;
+    /*esta es la lista donde esta support*/
+    padding-top: 15px;
+    text-decoration: none;
+}
+
+.footer-bottom ul {
+    margin: 0;
+}
+
+.inline-inside {
+    /*esta es la medida donde esta la lista de support*/
+    font-size: 0;
+    line-height: 0;
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: "";
+    display: flex;
+}
+
+#footer-menu li {
+    display: inline-block;
+    padding: 0 21px;
+    position: relative;
+    line-height: 1;
+}
+
+#footer-menu li+li:before {
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    left: -1px;
+    top: 0;
+    font-size: 0;
+    border-left: 1px solid #232234;
+    /*estas son las lineas que separan la lista donde esta support*/
+    border-right: 1px solid #333146;
+}
+
+#footer-socials {
+    text-align: right;
+    /*estas son donde estan las redes sociales*/
+}
+
+#footer-socials .socials {
+    text-align: right;
+    margin: 0 -7px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a.socials-item {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    margin: 0 5px;
+    line-height: 16px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #141421;
+    /*el fondo de las esferas de las redes*/
+    border: 1px solid #2e2e4c;
+    box-shadow: 3px 9px 16px rgb(0, 0, 0, 0.4), -3px -3px 10px rgba(255, 255, 255, 0.06), inset 14px 14px 26px rgb(0, 0, 0, 0.3), inset -3px -3px 15px rgba(255, 255, 255, 0.05);
+}
+
+.socials-item i {
+    display: inline-block;
+    font-weight: normal;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: top;
+    font-feature-settings: normal;
+    font-kerning: auto;
+    font-language-override: normal;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-weight: normal;
+    text-rendering: auto;
+}
+
+a.socials-item:hover {
+    box-shadow: 0 0px 20px rgba(84, 1, 74, 0.7);
+    border-color: rgba(255, 6, 224, 0.61);
+    background: linear-gradient(to right, rgba(255, 9, 9, 0.12941176470588237), #c000ffb5, rgba(255, 0, 94, 0.14));
+}
+
+.footer-bottom a:hover {
+    color: white;
+    /**esta le cambia el color al top html*/
+}
+
+.widget {
+    margin-bottom: 50px;
+}
+
+.footer-title {
+    margin-bottom: 40px;
+    color: #fff;
+    /*color de los titulos*/
+    font-weight: 500;
+    text-transform: capitalize;
+    /*linea debajo del titulo*/
+    padding-bottom: 15px;
+    font-size: 16px;
+    position: relative;
+}
+
+.footer-title:after {
+    width: 50px;
+    background: #fff;
+    /*color de la linea debajo del titulo*/
+    opacity: 0.2;
+    height: 1px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.gem-contacts-item {
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+.gem-contacts-item i {
+    padding-right: 10px;
+}
+
+footer .widget ul {
+    list-style: none;
+    margin-top: 5px;
+}
+
+.posts li {
+    border-bottom: 1px solid #393d50;
+    /*color de la linea debjo de sub titulos*/
+    padding-bottom: 12px;
+    padding-top: 6px;
+}
+
+footer p,
+footer li {
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.gem-pp-posts-date {
+    color: #00bcd4;
+    /*color de la parte de call*/
+    font-size: 89.5%;
+}
+
+footer p {
+    line-height: 24px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.wpcf7-form-control-wrap .wpcf7-form-control {
+    padding: 7px !important;
+    width: 100%;
+}
+
+.wpcf7-form-control-wrap input {
+    overflow: hidden;
+    border: 1px solid #2e344d;
+    background-color: #1c1f2f;
+    box-shadow: 10px 10px 36px rgb(0, 0, 0, 0.5), -13px -13px 23px rgba(255, 255, 255, 0.03);
+    /*sombreado de la caja del formulario*/
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.wpcf7-form-control-wrap input:hover {
+    background-color: transparent;
+    box-shadow: 10px 10px 36px rgb(0, 0, 0, 0.5), -13px -13px 23px rgba(255, 255, 255, 0.03), inset 14px 14px 70px rgb(0, 0, 0, 0.2), inset -15px -15px 30px rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.wpcf7 .wpcf7-form .contact-form-footer textarea {
+    height: 160px;
+    width: 100%;
+}
+
+.wpcf7-form-control-wrap textarea:hover {
+    background-color: transparent;
+    box-shadow: 10px 10px 36px rgb(0, 0, 0, 0.5), -13px -13px 23px rgba(255, 255, 255, 0.03), inset 14px 14px 70px rgb(0, 0, 0, 0.2), inset -15px -15px 30px rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.wpcf7-form-control-wrap textarea {
+    background: #1c1f2f;
+    overflow: hidden;
+    border: 1px solid #2e344d;
+    background-color: #1c1f2f;
+    box-shadow: 10px 10px 36px rgb(0, 0, 0, 0.5), -13px -13px 23px rgba(255, 255, 255, 0.03);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+.wpcf7 .wpcf7-form .contact-form-footer .wpcf7-submit {
+    width: 100%;
+    padding: 11px;
+    margin: 0;
+    line-height: 0;
+}
+
+.wpcf7-form .contact-form-footer .wpcf7-submit {
+    background-color: #394050;
+    color: #99a9b5;
+    border: none;
+    cursor: pointer;
+    padding: 15px 40px;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.5s;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, .5);
+    box-shadow: none;
+    text-transform: uppercase;
+    outline: none !important;
+    background-color: #1c1f2f;
+    border-radius: 5px;
+    min-width: 140px;
+    /* box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04); */
+    box-shadow: 3px 9px 16px rgb(0, 0, 0, 0.4), -3px -3px 10px rgba(255, 255, 255, 0.06), inset 14px 14px 26px rgb(0, 0, 0, 0.3), inset -3px -3px 15px rgba(255, 255, 255, 0.05);
+    border-width: 1px 0px 0px 1px;
+    border-style: solid;
+    border-color: #2e344d;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.wpcf7-form input[type=submit] {
+    height: 40px;
+    line-height: 21px;
+    padding: 10px 40px;
+    font-size: 14px;
+}
+
+.posts li a {
+    color: #99a9b5;
+    /*color de los subtitulos de la lista*/
+    text-decoration: none;
+}
+
+.wpcf7-form .contact-form-footer .wpcf7-submit:hover {
+    box-shadow: 0 0px 20px rgba(84, 1, 74, 0.7);
+    border-color: rgba(255, 6, 224, 0.61);
+    background: linear-gradient(to right, rgba(255, 9, 9, 0.12941176470588237), #c000ffb5, rgba(255, 0, 94, 0.14));
+    color: white;
+}
+
+img {
+    border-style: none;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.widget_gallery a {
+    display: inline-block;
+}
+
+footer .widget ul {
+    list-style: none;
+    margin-top: 5px;
+}
+
+.widget_gallery ul {
+    padding-left: 0;
+    display: table;
+}
+
+.widget_gallery li {
+    display: inline-block;
+    width: 33.33%;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    padding: 2px;
+}
+
+.widget_gallery.gallery-grid-4 li {
+    width: 30%;
+}
+
+
+#waterdrop {
+    height: 30px;
+}
+
+#waterdrop canvas {
+    bottom: -70px !important;
+}
+
+.footer-site-info {
+    padding-top: 10px;
+}
+
+/*Responsive*/
+@media only screen and (max-width: 768px) {
+    .menu {
+        padding: 10px 20px;
+    }
+
+    header {
+        padding: 10px 20px;
+    }
+
+    header .logo {
+        font-size: 1.5em;
+        width: 150px;
+    }
+
+    header ul li a {
+        margin: 0 10px;
+    }
+
+    .contenedor-img {
+        max-width: 50%;
+    }
+
+    .contenedor-texto {
+        padding: 10rem;
+    }
+
+    .contenedor-texto .titulo {
+        font-size: 35px;
+    }
+
+    .contenedor-texto .saludo {
+        font-size: 24px;
+    }
+
+    .content-area .title {
+        font-size: 2rem;
+        margin: 30px auto;
+    }
+
+    .sec1.card {
+        width: calc(50% - 20px);
+        margin: -10px;
+    }
+
+    .sec1.card .content {
+        width: 80%;
+    }
+
+    .sec2-opiniones .swiper-container {
+        padding-top: 500px;
+    }
+
+    .swiper-slide {
+        width: 250px;
+    }
+
+    .testimonialbox {
+        padding: 20px;
+    }
+
+    .footer-title {
+        font-size: 18px;
+        padding-bottom: 10px;
+    }
+
+    .footer-title:after {
+        width: 30px;
+    }
+}
+
+/*                                                          RESPONSIVE            */
+/*menu hamburguesa*/
+.abrir-menu {
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+    /*.abrir-menu {
+        display: block;
+    }
+
+    .nav ul {
+        display: none;
+    }*/
+
+    .nav {
+        position: absolute;
+    }
+
+    .nav-list {
+        flex-direction: column;
     }
 }
